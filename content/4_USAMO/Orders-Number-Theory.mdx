@@ -14,35 +14,54 @@ This is a module about orders, which deals with exponents in NT.
 
 ## Definition 
 
-Let's define orders first. 
+The **order** of $a\pmod p$, sometimes written as $\text{ord}_p (a)$, is the **smallest** positive integer $m$ such that $a^m\equiv 1\pmod p$.
 
-*The **order** of $a\pmod p$, sometimes written as $\text{ord}_p (a)$, is the **smallest** positive integer $m$ such that $a^m\equiv 1\pmod p$.* 
+The idea is quite similar to the logarithm function, but in Number Theory.
 
-The idea is quite similar to the logarithm function, but in NT. 
+## Fermat's Little Theorem
 
-## minimality 
+First, you may question how do you know this value exists. After all, what if, for all integers $m$, $a^m \not\equiv 1 \pmod p$? To do this, we must first show the famous Fermat's Little Theorem.
+
+**Fermat's Little Theorem.** $a^{p-1} \equiv 1 \pmod p$ for all integers $a$ and primes $p$ where $\gcd(a,p) = 1$.
+
+To prove this, consider two sets $A = \{1,2,\ldots, p-1\}$ and $B = \{a\cdot 1, a\cdot 2,\ldots, a\cdot (p-1)\}$. We will show all elements of $B$ are distinct. 
+
+Consider two elements $\epsilon_1,\epsilon_2 \in A$. For the sake of contradiction, suppose $a\cdot \epsilon_1$ and $a\cdot \epsilon_2$ are the same. Then,
+
+$$a\cdot \epsilon_1 - a\cdot \epsilon_2 \equiv a(\epsilon_1 - \epsilon_2) \equiv 0 \pmod p. $$
+
+As $\gcd(a,p) = 1$, then $\epsilon_1 - \epsilon_2 \equiv 0 \pmod p$, and so $\epsilon_1 \equiv \epsilon_2 \pmod p$. But, $0 \leq \epsilon_1, \epsilon_2 \leq p-1$, impossible, unless $\epsilon_1 = \epsilon_2$. Hence, all elements of $B$ are distinct. Nicely enough, we can multiply the elements of $A$ and $B$, and upon taking the results modulo $p$, they must be equal:
+
+$$ \prod_A \equiv \prod_B \implies (p-1)! \equiv a^{p-1} \cdot (p-1)! \pmod p \implies (p-1)! \cdot \left(a^{p-1}-1\right) \equiv 0 \pmod p.$$
+
+Note that $p$ is relatively prime to all elements of $A$, and so $\gcd(p, (p-1)!) = 1$. So, $a^{p-1} \equiv 1 \pmod p$, as desired. $\blacksquare$
+
+With that conclusion, it is safe to conclude there exists an integer $m$ such that $a^m \equiv 1 \pmod p$.
+
+## Power of Orders
 
 The power of orders is its minimality. To be more precise: 
 
-*Theorem 1. If $m=\text{ord}_p (a)$, and $k$ is a nonnegative integer such that $a^k\equiv 1\pmod p$, then $m\mid k$.*
+**Theorem 1.** If $k$ is a nonnegative integer such that $a^k\equiv 1\pmod p$, then $\text{ord}_p(a) \mid k$.
 
-*proof: The useful idea in orders is that you can take modulo on exponents. 
-Suppose $k=mq+r$ where $0<r<m$, then we have $a^k\equiv 1\pmod p\iff a^r\equiv 1\pmod p$, which contradicts the minimality of $m$, as needed.*
+Write $m = ord_p(a)$. To prove this, note that due to Divison Algorithm, we can write $k = mq+r$ for integers $m$, $q$, and $r$ where $0 \leq r < m. Notice, 
 
-Some students might also notice that: 
+$$ a^k\equiv 1\pmod p \implies \left(a^{m}\right)^q\cdot a^r \equiv 1 \pmod p \implies a^r \equiv 1 \pmod p.$$
 
-*problem: Prove that $\text{ord}_p (a)\mid \phi (p)$. In particular, if $p$ is a prime then $\text{ord}_p (a)\mid p-1$. (Hint: use Euler's theorem directly.)*
+But, if $0 < r < m$ then we contradict the minimality of order. So, $r = 0$ and so $m \mid k$, as desired. $\blacksquare$
 
-Thus the minimality of orders can be powerful if you know other exponents $k$ with $a^k\equiv 1\pmod p$. 
+In conjunction with Fermat's Little Theorem, it is clear that $a^{p-1} \equiv 1 \pmod p$, and so $\text{ord}_p(a) \mid (p-1)$.
 
-## primitive roots 
+## Primitive Roots 
 
-The converse also holds for a prime: There **exists** an integer $a$ such that $\text{ord}_p (a)=p-1$. For example: 
+The converse also holds for a prime: there **exists** an integer $a$ such that $\text{ord}_p (a)=p-1$. In particular, the sequence
 
-**problem**: Check that $2$ is a primitive root both $\pmod {11}$ and $\pmod {13}$. 
+$$a^1 \pmod p, \ \ a^2 \pmod p\ , \ \ldots\ \ , \ a^{p-1} \pmod p$$
 
-Primitive root always **exists** for a prime $p$, often denoted as $g$, but it's not always true that we know the exact value of $g$. 
+cycles through all elements from $1$ to $p-1$.
+
+For example, $2$ is a primitive root modulo $3$ as $2^1 \equiv 2 \pmod 3$ and $2^2 \equiv 1 \pmod 3$, and so $\text{ord}_3(2) = 2$. To sum, primitive roots always **exist** for a prime $p$, oftenly denoted by $g$. However, to our surprise, we do not know how to determine the exact value of $g$. 
+
+I will leave it to you to check that $2$ is a primitive root modulo $11$ and $13$. 
 
 ## Practice Problems
-
-<Problems problems="practice" />
