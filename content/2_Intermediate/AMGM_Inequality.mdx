@@ -9,79 +9,83 @@ prerequisites: []
 ## Overview
 
 AM-GM is the fastest way to bound expressions with fixed products or sums. It
-also provides clean equality conditions.
+also provides clean equality conditions. In general, there are usually two types of inequality problems that appear. 
+
+- The Olympiad version, which is generally the more common version, asks you to prove or find the minimum or maximum.
+- The Computational version is far more unique. Usually, they give you an equation that is the equality case, and you have to determine how to use it to your advantage.
 
 ## Key Ideas
 
-- For nonnegative $a,b$, $\frac{a+b}{2} \ge \sqrt{ab}$.
-  - In general, for nonnegative $a_1, a_2, ... a_n$, $\frac{a_1 + a_2 + ... + a_n}{n} \ge \sqrt[n]{a_1 a_2 ... a_n}$
-- Equality holds when all variables are equal.
-  - i.e. When $a_1 = a_2 = ... = a_n$, $\frac{a_1 + a_2 + ... + a_n}{n} = \sqrt[n]{a_1 a_2 ... a_n}$
-- For $ax+\frac{b}{x}$, the minimum is $2\sqrt{ab}$ at $x=\sqrt{\frac{b}{a}}$.
+- For nonnegative $a_1, a_2, ... a_n$, $\frac{a_1 + a_2 + ... + a_n}{n} \ge \sqrt[n]{a_1 a_2 ... a_n}$.
+- Equality holds when all variables are equal; that is, when $a_1 = a_2 = ... = a_n$, then $\frac{a_1 + a_2 + ... + a_n}{n} = \sqrt[n]{a_1 a_2 ... a_n}$.
 
 ## Core Skills
 
 ### Check Nonnegativity
 
-AM-GM requires nonnegative terms. If variables can be negative, reframe the
-expression (for example with squares) before applying it.
+Firstly, it is important to ensure that one carefully checks that the terms on which the inequality is applied are nonnegative terms. 
+If the variables can be negative, you should try to play around with them a bit more. For instance, reframe the expression with squares before applying it.
 
 ### Normalize Expressions
 
-Rewrite the expression to look like a sum of terms with a fixed product. Then
-apply AM-GM directly.
+Recall, the right-hand side is a product. Rewrite the expression to look like a sum of terms with a fixed product. 
+Then apply AM-GM directly.
 
 ### Use Equality Cases
 
 The equality condition tells you where the minimum or maximum occurs. Use it
-to solve for parameters.
+to solve for parameters. For instance, in many computational competitions, they won't ask you to prove an inequality. 
+Instead, they may give you the equality, and you have to spot it!
 
-## Worked Example
+## Examples
 
-Find the minimum of $x + \frac{4}{x}$ for $x>0$.
+### Example 1. (Basic)
 
+**Problem.** Compute the minimum possible value of $x + \frac{4}{x}$ for $x>0$.
 
-By AM-GM:
+*Solution.* By AM-GM, it follows that
+
 $$\frac{x + \frac{4}{x}}{2} \ge \sqrt{x \cdot \frac{4}{x}} = 2$$
-So $x + \frac{4}{x} \ge 4$, with equality at $x=2$.
 
-## More Examples
+So, $x + \frac{4}{x} \ge 4$, with equality at $x=2$. Note that we can derive $x=2$ as the equality occurs when $x = \tfrac{4}{x}$.
 
-### Example 1: Three Variables
+### Example 2. (More variables)
 
-For $a,b,c \ge 0$ with $abc=1$, find the minimum of $a+b+c$.
+**Problem.** Let $a,b,c \ge 0$ be positive real numbers with $abc=1$, compute the minimum of $a+b+c$.
 
-By AM-GM, $a+b+c \ge 3\sqrt[3]{abc} = 3$.
+*Solution.* By AM-GM, $a+b+c \ge 3\sqrt[3]{abc} = 3$.
 
-This is when $a = b = c = 1$.
+This occurs when $a = b = c = 1$.
 
-### Example 2: Fixed Sum
+### Example 3. (Opposite)
 
-If $x+y=10$ and $x,y \ge 0$, find the maximum of $xy$.
+**Problem.** Let $x$ and $y$ be positive real numbers such that $x+y=10$. Compute the maximum possible value of $xy$.
 
-By AM-GM, $\frac{x+y}{2} \ge \sqrt{xy}$, so $xy \le 25$ at $x=y=5$.
+*Solution.* By AM-GM, 
 
-### Example 3: Weighted Form
+$$\frac{x+y}{2} \ge \sqrt{xy} \iff 5 \geq \sqrt{xy}$$
 
-Find the minimum of $2x + \frac{8}{x}$ for $x>0$.
+so $xy \le \boxed{25}$ at $x=y=5$.
 
-By AM-GM, $2x + \frac{8}{x} \ge 2 \sqrt{2x \cdot \frac{8}{x}} = \sqrt{16} = 4$
+### Example 4. (Splitting)
 
-This is when $2x = \frac{8}{x}$, so when $x = 2$ as $x>0$
+**Problem.** Let $x$ be a positive real number. Compute the minimum possible value of $x^2 + \frac{16}{x}$.
 
-### Example 4: Extensive Use
+*Solution.* By AM-GM, 
 
-Find the minimum value of $x + y$ when $(x - 2)(y - 2) = 81$ for $x, y > 2$
+$$x^2 + \frac{8}{x}+\dfrac{8}{x} \ge 3 \sqrt[3]{x^2 \cdot \frac{64}{x^2}} = 3 \cdot 4 = 12.$$
 
-From the given constraints, $x, y > 2$, rewrite this into $x - 2, y - 2, > 0$ and then apply AM-GM:
+Notably, this occurs when $x^2 = \frac{8}{x}$, and so when $x = 2$.
+
+### Example 5. (Unique)
+
+**Problem.** Let $x,y>2$ be real numbers satisfying $(x - 2)(y - 2) = 81$. Compute the minimum possible value of $x+y$.
+
+*Solution.* From the given constraints, $x, y > 2$, rewrite this into $x - 2, y - 2, > 0$ and then apply AM-GM:
 
 $$(x-2) + (y-2) \ge 2 \sqrt{(x-2)(y-2)} = 2 \sqrt{81} = 18$$
 
-Which becomes:
-
-$$x + y \ge 22$$
-
-The equality is when $x - 2 = y - 2$ which is when, $x = y = 11$.
+which becomes $x+y \geq 22$. The equality occurs when $x - 2 = y-2$, which is when $x = y = 11$.
 
 ## Strategy Checklist
 
