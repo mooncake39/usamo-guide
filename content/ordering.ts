@@ -92,7 +92,7 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'divisibility-primes',
         'divisibility-rules',
         'gcd-and-lcm',
-        'divisor-counting-formulas',
+        'divisor-functions',
         'modular-arithmetic-intro',
         'units-digit-periodicity',
         'base-number-systems',
