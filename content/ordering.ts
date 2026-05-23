@@ -20,7 +20,8 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
       items: [
         'arithmetic-nt-basics',
         'fraction-decimal-percent',
-        'proportional-reasoning',
+        'Fractions_Percentages_Proportions_p1',
+        'Fractions_Percentages_Proportions_p2',
         'kinematics-and-rates',
         'estimation-bounding',
         'absolute-value-integers',
