@@ -62,6 +62,68 @@ Factor $81 + 4y^4$.
 
 Write $81 = 3^4$ and apply the identity with $x=3$.
 
+### Is it Prime?
+
+Your job is to find all positive integers $n$ such that the expression $n^4+4$ is prime!
+
+We can directly apply the Sophie Germain identity here:
+$(n^2-2n+2)(n^2+2n+2)$.
+
+Now, notice that if $n>1$, then it follows that both factors must be greater than $1$, and thus the expression is COMPOSITE.
+From here, checking $n=1$ gives $5$, which is indeed prime!
+
+### Is it Composite?
+
+Your job is to prove that $n^4+4n^2+16$ is COMPOSITE for all positive integers $n$.
+
+First, we simply rewrite the expression in a similar way to that of Sophie Germain
+$(n^2+4)^2-(2n)^2$.
+
+Next, we can simply factor using the difference of squares:
+$(n^2-2n+4)(n^2+2n+4)$.
+
+### Diophantine Equation with Sophie-Germain flavor!
+
+Your goal is to find ALL integer solutions to the expression: $x^4+4y^4=17$.
+
+Again, we can simply apply the Sophie Germain identity directly:
+$(x^2-2xy+2y^2)(x^2+2xy+2y^2)=17$.
+
+It's just number theory from here, so since $17$ is prime, ONE of the factors must equal $1$. After testing small values
+, we get that no such integer solutions exist.
+
+### Representation of a Prime
+
+Your goal is to prove that if an odd prime $p$ can be written in the following form:
+$p=n^4+4m^4$, then it must be that $p=5$.
+
+We begin by tackling via Sophie Germain as shown below:
+$(n^2-2nm+2m^2)(n^2+2nm+2m^2)$.
+
+Now, notice that because $p$ is prime, ONE of the factors factor must equal $1$, which then FORCES
+$n=m=1$ and gives $p=5$.
+
+### Is it a perfect square?
+
+Your goal is to determine ALL positive integers $n$ such that the expression $n^4+4$ is a perfect
+square.
+
+We begin, like usual, using Sophie Germain, from which we get:
+$(n^2-2n+2)(n^2+2n+2)$.
+
+From here, it's just Number Theory. Observe that the factors differ by $4n$ and are ALMOST consecutive, so they cannot
+possibly combine to form a perfect square. If we check some small cases, we will not be able to find any solutions. Note: As an exercise, rigorously prove that they cannot form a perfect square by considering consecutive squares and bounds!
+
+### Factor...:
+
+Your goal is to simply factor $(x^2+2)^4+4x^4$.
+
+We can treat it as $a^4+4b^4$ with $a=x^2+2$ and $b=x$.
+
+Applying the identity gives the following intimidating but correct expression:
+$((x^2+2)^2-2x(x^2+2)+2x^2)((x^2+2)^2+2x(x^2+2)+2x^2)$.
+
+
 ## Strategy Checklist
 
 - Check that the coefficient of $y^4$ is $4$ (or can be made $4$).
