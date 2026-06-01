@@ -149,7 +149,10 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
     {
       name: 'Functional Equations',
       description: 'Standard substitutions and symmetry-based approaches.',
-      items: ['functional-equations'],
+      items: [
+        'functional-equations-p1',
+        'functional-equations-p2',
+      ],
     },
     {
       name: 'Counting & Casework',
