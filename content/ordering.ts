@@ -23,7 +23,6 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'fractions_percentages_proportions_p1',
         'fractions_percentages_proportions_p2',
         'kinematics-and-rates',
-        'estimation-bounding',
         'absolute-value-integers_p1',
         'absolute-value-integers_p2',
       ],
@@ -73,8 +72,6 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'circle-angles',
         'composite-figures-shaded-areas',
         'coordinate-geometry-basics',
-
-        // shifted
         'triangle-angle-sum',
         'triangle-area-formulas',
         'special-triangles',
@@ -97,8 +94,6 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'units-digit-periodicity',
         'base-number-systems',
         'miscellaneous-number-theory',
-
-        // shifted
         'linear-diophantine-equations',
       ],
     },
@@ -116,8 +111,6 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'stars-and-bars',
         'geometric-counting',
         'recursion-basics',
-
-        // shifted
         'pascals-triangle-binomial-theorem',
         'pigeonhole-principles',
       ],
@@ -137,7 +130,6 @@ const MODULE_ORDERING: { [key in SectionID]: Chapter[] } = {
         'sum-formulas-powers',
         'function-basics-p1',
         'function-basics-p2',
-        // promoted from foundations
         'vieta-formulas',
         'vieta-jumping',
         'polynomial-manipulations',
