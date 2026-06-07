@@ -6259,34 +6259,6 @@
       }
     },
     {
-      "uniqueId": "amc8-2022-21",
-      "name": "Problem 21 (2022 AMC 8)",
-      "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_21",
-      "source": "AMC 8",
-      "difficulty": "Normal",
-      "isStarred": false,
-      "tags": [
-        "Percentages",
-        "Fractions",
-        "System of Inequalities"
-      ],
-      "statement": "Steph scored $15$ baskets out of $20$ attempts in the first half of a game, and $10$ baskets out of $10$ attempts in the second half. Candace took $12$ attempts in the first half and $18$ attempts in the second. In each half, Steph scored a higher percentage of baskets than Candace. Surprisingly they ended with the same overall percentage of baskets scored. How many more baskets did Candace score in the second half than in the first?",
-      "interaction": {
-        "type": "mcq",
-        "choices": [
-          "$7$",
-          "$8$",
-          "$9$",
-          "$10$",
-          "$11$"
-        ],
-        "correctIndex": 2
-      },
-      "solutionMetadata": {
-        "kind": "none"
-      }
-    },
-    {
       "uniqueId": "amc8-2022-22",
       "name": "Problem 22 (2022 AMC 8)",
       "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_22",

@@ -23279,32 +23279,6 @@
           }
         },
         {
-          "uniqueId": "amc8-2022-20",
-          "name": "Problem 20 (2022 AMC 8)",
-          "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_20",
-          "source": "AMC 8",
-          "difficulty": "Normal",
-          "isStarred": false,
-          "categorization": "Algebra Basics",
-          "tags": [
-            "Magic Square",
-            "Linear Equations",
-            "Inequalities"
-          ],
-          "statement": "The grid below is to be filled with integers in such a way that the sum of the numbers in each row and the sum of the numbers in each column are the same. Four numbers are missing. The number $x$ in the lower left corner is larger than the other three missing numbers. What is the smallest possible value of $x$? [See figure in original PDF]",
-          "answerChoices": [
-            "$-1$",
-            "$5$",
-            "$6$",
-            "$8$",
-            "$9$"
-          ],
-          "answer": "D",
-          "solutionMetadata": {
-            "kind": "none"
-          }
-        },
-        {
           "uniqueId": "amc8-2022-21",
           "name": "Problem 21 (2022 AMC 8)",
           "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_21",
