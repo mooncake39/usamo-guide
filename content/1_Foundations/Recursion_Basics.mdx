@@ -69,3 +69,84 @@ Applying this up to $$k = 5$$:
 ## Practice Problems
 
 <Problems problems="practice" />
+**Problem 1.** A frog can jump 1 or 2 lily pads at a time. How many different ways can it reach the 6th lily pad from the start?
+
+<Spoiler>
+
+**Solution:** Let $f(n)$ = number of ways to reach pad $n$.
+
+Base cases: $f(1) = 1$, $f(2) = 2$.
+
+Transition: $f(n) = f(n-1) + f(n-2)$ (last jump was 1 or 2).
+
+$$f(3)=3,\quad f(4)=5,\quad f(5)=8,\quad f(6)=\boxed{13}$$
+
+</Spoiler>
+
+---
+
+**Problem 2.** A sequence starts with 1, 1, and each new term is the sum of the two before it. What is the 9th term?
+
+<Spoiler>
+
+**Solution:** This is the Fibonacci sequence: $f(n) = f(n-1) + f(n-2)$.
+
+$$1, 1, 2, 3, 5, 8, 13, 21, \boxed{34}$$
+
+</Spoiler>
+
+---
+
+**Problem 3.** How many ways can you tile a $2 \times 5$ grid using only $1 \times 2$ dominoes placed horizontally or vertically?
+
+<Spoiler>
+
+**Solution:** Let $f(n)$ = ways to tile a $2 \times n$ grid. The rightmost column is covered by one vertical domino (contributing $f(n-1)$) or two horizontal dominoes (contributing $f(n-2)$).
+
+Transition: $f(n) = f(n-1) + f(n-2)$. Base cases: $f(1)=1$, $f(2)=2$.
+
+$$f(3)=3,\quad f(4)=5,\quad f(5)=\boxed{8}$$
+
+</Spoiler>
+
+---
+
+**Problem 4.** You are climbing stairs and can take 1, 2, or 3 steps at a time. How many ways can you reach step 7?
+
+<Spoiler>
+
+**Solution:** Let $f(n)$ = ways to reach step $n$. Transition: $f(n) = f(n-1)+f(n-2)+f(n-3)$.
+
+Base cases: $f(1)=1$, $f(2)=2$, $f(3)=4$.
+
+$$f(4)=7,\quad f(5)=13,\quad f(6)=24,\quad f(7)=\boxed{44}$$
+
+</Spoiler>
+
+---
+
+**Problem 5.** A bug walks on a number line starting at 0. Each second it moves $+1$ or $-1$. How many paths of length 6 return the bug to 0 at the end?
+
+<Spoiler>
+
+**Solution:** To return to 0 in 6 steps, the bug must take exactly 3 steps right and 3 left. The number of such paths is:
+
+$$\binom{6}{3} = \boxed{20}$$
+
+This also follows from the recursion $f(n,k) = f(n-1,k-1)+f(n-1,k+1)$ with $f(0,0)=1$.
+
+</Spoiler>
+
+---
+
+**Problem 6.** How many strings of length 8 made of only A and B contain no two consecutive B's?
+
+<Spoiler>
+
+**Solution:** Let $f(n)$ = valid strings of length $n$. If the last character is A, the rest can be any valid string of length $n-1$. If the last character is B, the one before must be A, giving $f(n-2)$ options.
+
+Transition: $f(n) = f(n-1)+f(n-2)$. Base cases: $f(1)=2$, $f(2)=3$.
+
+$$f(3)=5,\quad f(4)=8,\quad\ldots\quad f(8)=\boxed{55}$$
+
+</Spoiler>
