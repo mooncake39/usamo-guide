@@ -6259,6 +6259,34 @@
       }
     },
     {
+      "uniqueId": "amc8-2022-21",
+      "name": "Problem 21 (2022 AMC 8)",
+      "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_21",
+      "source": "AMC 8",
+      "difficulty": "Normal",
+      "isStarred": false,
+      "tags": [
+        "Percentages",
+        "Fractions",
+        "System of Inequalities"
+      ],
+      "statement": "Steph scored $15$ baskets out of $20$ attempts in the first half of a game, and $10$ baskets out of $10$ attempts in the second half. Candace took $12$ attempts in the first half and $18$ attempts in the second. In each half, Steph scored a higher percentage of baskets than Candace. Surprisingly they ended with the same overall percentage of baskets scored. How many more baskets did Candace score in the second half than in the first?",
+      "interaction": {
+        "type": "mcq",
+        "choices": [
+          "$7$",
+          "$8$",
+          "$9$",
+          "$10$",
+          "$11$"
+        ],
+        "correctIndex": 2
+      },
+      "solutionMetadata": {
+        "kind": "none"
+      }
+    },
+    {
       "uniqueId": "amc8-2022-22",
       "name": "Problem 22 (2022 AMC 8)",
       "url": "https://artofproblemsolving.com/wiki/index.php?title=2022_AMC_8_Problems/Problem_22",
@@ -6441,6 +6469,33 @@
           "$600,000$"
         ],
         "correctIndex": 2
+      },
+      "solutionMetadata": {
+        "kind": "none"
+      }
+    },
+    {
+      "uniqueId": "amc8-2023-13",
+      "name": "Problem 13 (2023 AMC 8)",
+      "url": "https://artofproblemsolving.com/wiki/index.php?title=2023_AMC_8_Problems/Problem_13",
+      "source": "AMC 8",
+      "difficulty": "Normal",
+      "isStarred": false,
+      "tags": [
+        "Distance",
+        "Fractions"
+      ],
+      "statement": "Along the route of a bicycle race, $7$ water stations are evenly spaced between the start and finish lines, as shown in the figure below. There are also $2$ repair stations evenly spaced between the start and finish lines. The 3rd water station is located $2$ miles after the 1st repair station. How long is the race in miles? [See figure in original PDF]",
+      "interaction": {
+        "type": "mcq",
+        "choices": [
+          "$8$",
+          "$16$",
+          "$24$",
+          "$48$",
+          "$96$"
+        ],
+        "correctIndex": 3
       },
       "solutionMetadata": {
         "kind": "none"
