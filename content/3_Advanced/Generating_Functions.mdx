@@ -151,6 +151,150 @@ When comparing this to Binet's formula for Fibonacci numbers, this is equal to
 
 $$f_n = \frac{1}{\sqrt{5}} ((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$$
 
+### Example 5: Interesting Sum
+
+Your goal is to evaluate the following expression:
+
+$$S_n=\sum_{k=0}^{n} \binom{n-k}{k}2^k.$$
+
+First, we let
+
+$$F(x)=\sum_{n\ge0}S_nx^n.$$
+
+Then
+
+$$F(x)=\sum_{n\ge0}\sum_{k\ge0}\binom{n-k}{k}2^kx^n.$$
+
+Using
+
+$$\sum_{m\ge k}\binom{m}{k}x^m=\frac{x^k}{(1-x)^{k+1}},$$
+
+we get that
+
+$$F(x)=\frac{1}{1-x}\sum_{k\ge0}\left(\frac{2x^2}{1-x}\right)^k
+=\frac{1}{1-x-2x^2}.$$
+
+And factoring,
+$$1-x-2x^2=(1-2x)(1+x).$$
+
+Then, we see that partial fractions gives us the following:
+
+$$F(x)=\frac{2/3}{1-2x}+\frac{1/3}{1+x}.$$
+
+And consequently,
+
+$$S_n=\frac{2}{3}\cdot2^n+\frac{1}{3}(-1)^n
+=\frac{2^{n+1}+(-1)^n}{3}.$$
+
+### Example 6: Classic Gen. Functions Problem (remember this!)
+
+Let $a_n$ denote the number of ordered compositions of $n$ whose parts are only $1,2,$ or $4$. Your job is to find $a_n$.
+
+First, notice that each part contributes the following:
+
+$$x+x^2+x^4.$$
+
+Thus, we have that
+
+$$A(x)=1+(x+x^2+x^4)+(x+x^2+x^4)^2+\cdots
+=\frac{1}{1-x-x^2-x^4}.$$
+
+Next, we can multiply through to get:
+
+$$\left(1-x-x^2-x^4\right)A(x)=1.$$
+
+And comparing the coefficients gives us our answer:
+
+$$a_n=a_{n-1}+a_{n-2}+a_{n-4},\qquad n\ge4.$$
+
+### Example 7: Only Even-Sized Subsets (also very common! Remember this!)
+
+How many subsets of $\{1,2,\dots,n\}$ contain an even number of elements (solve using generating functions)?
+
+First, notice that the generating function is simply:
+
+$$(1+x)^n=\sum_{k=0}^{n}\binom{n}{k}x^k.$$
+
+Realize that the sum of the even coefficients is
+
+$$\frac{(1+1)^n+(1-1)^n}{2}.$$
+
+And consequently, we get
+
+$$\frac{2^n+0}{2}=2^{n-1}.$$
+
+Which makes the answer:
+
+$$2^{n-1}.$$
+
+### Example 8: More binomial expressions!
+
+Your job is to show that the following expression is true:
+
+$$\sum_{k=0}^{n}\binom{2k}{k}\binom{2n-2k}{n-k}=4^n.$$
+
+First, recall that
+
+$$\sum_{n\ge0}\binom{2n}{n}x^n=\frac{1}{\sqrt{1-4x}}.$$
+
+Then, squaring the expression, we get:
+
+$$\left(\sum_{n\ge0}\binom{2n}{n}x^n\right)^2
+=\frac{1}{1-4x}.$$
+
+Notice that the coefficient of $x^n$ on the left is simply
+
+$$\sum_{k=0}^{n}\binom{2k}{k}\binom{2n-2k}{n-k},$$
+
+while the coefficient on the right is
+
+$$4^n.$$
+
+Thus, we have:
+
+$$\sum_{k=0}^{n}\binom{2k}{k}\binom{2n-2k}{n-k}=4^n.$$
+
+### Example 9: Catalan Numbers (very famous and fun numbers with many applications!)
+
+Your goal is to find a generating function for the Catalan numbers $C_n$, which are defined by
+
+$$C_0=1,\qquad C_n=\sum_{k=0}^{n-1}C_kC_{n-1-k} \quad (n\ge1).$$
+
+First, we let
+
+$$C(x)=\sum_{n\ge0}C_nx^n.$$
+
+Then, using the recurrence relation, we get that
+
+$$C(x)=1+xC(x)^2.$$
+
+Solving the quadratic equation,
+
+$$C(x)=\frac{1\pm\sqrt{1-4x}}{2x}.$$
+
+Since $C(0)=1$, we can simply choose the negative one
+
+Thus,
+
+$$C(x)=\frac{1-\sqrt{1-4x}}{2x}.$$
+
+### Example 10: Derangements 
+
+Let $d_n$ denote the number of permutations of $\{1,2,\dots,n\}$ with no fixed points.
+
+First, notice that the exponential generating function for all permutations is
+
+$$\sum_{n\ge0}n!\frac{x^n}{n!}=\frac{1}{1-x}.$$
+
+Next, notice that for each element, either it is fixed (contributing $x$) or not fixed (contributing $1$), so we can simply remove fixed points by multiplying by $e^{-x}$.
+
+Hence the exponential generating function for derangements is
+
+$$D(x)=\frac{e^{-x}}{1-x}.$$
+
+Therefore,
+
+$$D(x)=\sum_{n\ge0}d_n\frac{x^n}{n!}=\frac{e^{-x}}{1-x}.$$
 ## Strategy Checklist
 
 - Translate each constraint into a factor.
