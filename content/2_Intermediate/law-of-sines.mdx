@@ -1,0 +1,87 @@
+---
+id: law-of-sines
+title: Law of Sines
+author: Raymond Li
+description: A tool used to connect the sides, angles, and the circumradius of triangles.
+prerequisites: [triangle-fundamentals]
+---
+
+## Introduction
+
+The Law of Sines is a powerful tool in triangle geometry, its two largest use cases being:
+
+- Using **direct ratios**: determining missing quantities in a triangle when given either two angles and a side or two sides and an angle.
+- Using **circumradius ratio**: the extended form $a = 2R\sin A$ connects side lengths to the circumradius.
+
+Law of Sines is rarely used just to find missing side lengths, but is very useful in angle chasing and trigbash/coordbashing.
+
+## Key Ideas
+
+- For a triangle $ABC$ with sides $a = BC$, $b = CA$, $c = AB$ opposite angles $A$, $B$, $C$:
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$$
+
+where $R$ is the circumradius of triangle $ABC$.
+
+## Core Skills
+
+### Convert Between Sides and Angles
+
+The Law of Sines essentially allows you to "convert" between sides and angles by setting up the ratios and cross-multiplying to find the unknown property of the triangle.
+
+### Use the Extended Form First
+
+When a problem involves a circumradius or a cyclic polygon, try using $a = 2R \sin A$ first. This usually reduces the problem to a trigonometric identity or a clean ratio, or at least reduces the chance that solving will result in messy trig.
+
+### Using in conjunction with Law of Cosines
+
+Law of Cosines can be used to determine an angle or side of a triangle which can then be applied into the Law of Sines to find more unknown values.
+
+## Solved Examples
+
+### Example 1: Basic ratio
+
+> **Problem.** In triangle $ABC$, $\angle A = 45°$, $\angle B = 75°$, and $AB = 6$. Find $BC$.
+
+*Solution.* Since $\angle A + \angle B + \angle C = 180°$, find that $\angle C = 60°$. By Law of Sines,
+
+$$
+\frac{BC}{\sin A} = \frac{AB}{\sin C} \implies BC = \frac{AB \sin A}{\sin C} = \frac{6 \cdot \sin 45°}{\sin 60°} = \frac{6 \cdot \frac{\sqrt{2}}{2}}{\frac{\sqrt{3}}{2}} = \frac{6\sqrt{2}}{\sqrt{3}} = 2\sqrt{6}.
+$$
+
+### Example 2: Extended Form
+
+> **Problem.** A triangle has sides $5$, $7$, and $8$. Find its circumradius $R$ and area $[ABC]$.
+
+*Solution.* Let $a = 8$ be the longest side, opposite angle $A$. By the Law of Cosines,
+
+$$
+\cos A = \frac{5^2 + 7^2 - 8^2}{2 \cdot 5 \cdot 7} = \frac{1}{7}.
+$$
+
+By trig identities, $\sin A = \sqrt{1-\cos^2(A)} = \sqrt{1 - \tfrac{1}{49}} = \tfrac{4\sqrt{3}}{7}$. By the extended form of Law of Sines,
+
+$$
+R = \frac{a}{2\sin A} = \frac{8}{2 \cdot \frac{4\sqrt{3}}{7}} = \frac{7\sqrt{3}}{3}.
+$$
+
+Finally, using area formula $[ABC] = \tfrac{abc}{4R}$, we find that $[ABC]= \tfrac{5 \cdot 7 \cdot 8}{4 \cdot \frac{7\sqrt{3}}{3}} = 10\sqrt{3}$.
+
+
+## Strategy Checklist
+
+- Identify what is given: sides, angles, or circumradius.
+- If a circumradius is involved, use $a = 2R\sin A$ first.
+- If two sides and an included angle are given, use Law of Cosines and then Law of Sines.
+- If two angles are given, find the third ($A + B + C = 180°$) before setting up the ratio.
+- If multiple triangles share a circumcircle, you can use Law of Sines across sub-triangles.
+
+## Common Pitfalls
+
+- Failing to recognize when to use the extended form, leading to unnecessary calculations and more oppurtunities for error.
+- Failing to check the ambiguous case in SSA cases.
+- Mislabeling angle-side pairs (opposite angle/sides correspond)
+
+## Practice Problems
+
+<Problems problems="practice" />
